@@ -10,6 +10,7 @@ import me.yumin.android.common.domain.api.result.BeforeConsumeApiResult;
 import me.yumin.android.common.etc.CommonConstant;
 import me.yumin.android.common.etc.CommonUtil;
 import me.yumin.android.common.etc.HttpUtil;
+import me.yumin.android.common.etc.LogUtil;
 import org.json.JSONObject;
 
 /**
@@ -17,6 +18,11 @@ import org.json.JSONObject;
  * 
  */
 public class BeforeConsumeApi extends BaseTopApi {
+
+	/**
+	 * 
+	 */
+	private static final String TAG = BeforeConsumeApi.class.getSimpleName();
 
 	/**
 	 * 
@@ -30,6 +36,7 @@ public class BeforeConsumeApi extends BaseTopApi {
 		try {
 			Map<String, Object> paramMap = createParamMap(apiParam);
 			String json = HttpUtil.postParam(API_BEFORE_CONSUME, paramMap);
+			LogUtil.logV(TAG, json);
 			if (CommonUtil.isNotEmpty(json)) {
 				JSONObject rootObject = new JSONObject(json);
 				if (null != rootObject) {
