@@ -29,7 +29,7 @@ public class LoginV2Api extends BaseTopApi {
 
 		try {
 			Map<String, Object> paramMap = createParamMap(apiParam);
-			String json = HttpUtil.postParam(CommonConstant.API_LOGIN_V2, paramMap);
+			String json = HttpUtil.postParam(API_LOGIN_V2, paramMap);
 			if (CommonUtil.isNotEmpty(json)) {
 				JSONObject rootObject = new JSONObject(json);
 				if (null != rootObject) {

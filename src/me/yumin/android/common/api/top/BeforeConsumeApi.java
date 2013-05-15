@@ -29,7 +29,7 @@ public class BeforeConsumeApi extends BaseTopApi {
 
 		try {
 			Map<String, Object> paramMap = createParamMap(apiParam);
-			String json = HttpUtil.postParam(CommonConstant.API_BEFORE_CONSUME, paramMap);
+			String json = HttpUtil.postParam(API_BEFORE_CONSUME, paramMap);
 			if (CommonUtil.isNotEmpty(json)) {
 				JSONObject rootObject = new JSONObject(json);
 				if (null != rootObject) {

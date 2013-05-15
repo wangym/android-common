@@ -14,6 +14,13 @@ import me.yumin.android.common.etc.SystemUtil;
  */
 public abstract class BaseTopApi {
 
+	// 接口
+	protected static final String API_AUTO_LOGIN_V2 = "http://api.m.taobao.com/rest/api2.do?api=com.taobao.client.sys.autoLogin&v=v2";
+	protected static final String API_GET_APP_TOKEN = "http://api.m.taobao.com/rest/api2.do?api=com.taobao.client.sys.getAppToken&v=*";
+	protected static final String API_LOGIN_V2 = "http://api.m.taobao.com/rest/api2.do?api=com.taobao.client.sys.login&v=v2";
+	protected static final String API_BEFORE_CONSUME = "http://api.m.taobao.com/rest/api2.do?api=mtop.eticket.wirelessbeforeconsume&v=1.0";
+	protected static final String API_CONSUME = "http://api.m.taobao.com/rest/api2.do?api=mtop.eticket.wirelessConsume&v=1.0";
+
 	/**
 	 * 
 	 * @param json

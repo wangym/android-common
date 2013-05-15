@@ -29,7 +29,7 @@ public class GetAppTokenApi extends BaseTopApi {
 
 		try {
 			Map<String, Object> paramMap = createParamMap(apiParam);
-			String json = HttpUtil.postParam(CommonConstant.API_GET_APP_TOKEN, paramMap);
+			String json = HttpUtil.postParam(API_GET_APP_TOKEN, paramMap);
 			if (CommonUtil.isNotEmpty(json)) {
 				JSONObject rootObject = new JSONObject(json);
 				if (null != rootObject) {
