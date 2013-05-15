@@ -9,7 +9,9 @@ package me.yumin.android.common.etc;
  */
 public final class CommonConstant {
 
-	// 键名
+	// file
+	public static final String F_CONFIG_PROPERTIES = "properties/config.properties";
+	// key:
 	public static final String K_APP_KEY = "appKey";
 	public static final String K_BUYER_NICK = "buyerNick";
 	public static final String K_CHECK_CODE = "checkCode";
@@ -25,6 +27,7 @@ public final class CommonConstant {
 	public static final String K_ITEM_TITLE = "itemTitle";
 	public static final String K_KEY = "key";
 	public static final String K_LOGIN_TIME = "logintime";
+	public static final String K_MODE = "mode";
 	public static final String K_NICK = "nick";
 	public static final String K_PASSWORD = "password";
 	public static final String K_PUB_KEY = "pubKey";
@@ -39,10 +42,9 @@ public final class CommonConstant {
 	public static final String K_TTID = "ttid";
 	public static final String K_USER_ID = "userId";
 	public static final String K_USERNAME = "username";
-	// 键值
-	public static final String V_SUCCESS = "SUCCESS";
-	// 分隔
-	public static final String SEPARATE_DOUBLE_COLON = "::";
-	//
+	// other
 	public static final String CHARSET_NAME = "UTF-8";
+	public static final String SEPARATE_DOUBLE_COLON = "::";
+	// value
+	public static final String V_SUCCESS = "SUCCESS";
 }

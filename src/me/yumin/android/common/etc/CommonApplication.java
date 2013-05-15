@@ -20,8 +20,6 @@ public class CommonApplication extends Application {
 	/**
 	 * 
 	 */
-	public static Application context;
-
 	@Override
 	public void onCreate() {
 
@@ -57,7 +55,9 @@ public class CommonApplication extends Application {
 	private void init() {
 
 		Log.v(TAG, "init");
-		context = this;
+		CommonGlobalVar.context = this;
+		CommonGlobalVar.config = StorageUtil.loadAssetsProperties(CommonConstant.F_CONFIG_PROPERTIES);
+		CommonGlobalVar.mode = CommonUtil.getPropertyValue(CommonGlobalVar.config, CommonConstant.K_MODE);
 		CommonGlobalVar.imei = SystemUtil.getImei();
 		CommonGlobalVar.imsi = SystemUtil.getImsi();
 		CrashHandler.getInstance().init();

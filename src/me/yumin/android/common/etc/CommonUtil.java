@@ -10,6 +10,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.security.MessageDigest;
 import java.util.Map;
+import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import me.yumin.android.common.thirdparty.Base64;
@@ -109,6 +110,25 @@ public final class CommonUtil {
 		}
 
 		return base64Bytes;
+	}
+
+	/**
+	 * 
+	 * @param properties
+	 * @param key
+	 * @return
+	 */
+	public static String getPropertyValue(Properties properties, String key) {
+
+		String value = null;
+
+		if (null != properties && isNotEmpty(key)) {
+			if (properties.containsKey(key)) {
+				value = properties.getProperty(key);
+			}
+		}
+
+		return value;
 	}
 
 	/**

@@ -3,6 +3,8 @@
  */
 package me.yumin.android.common.etc;
 
+import java.io.InputStream;
+import java.util.Properties;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Environment;
@@ -20,7 +22,7 @@ public final class StorageUtil {
 	 */
 	public static SharedPreferences getSharedPreferences(String name) {
 
-		SharedPreferences sharedPreferences = CommonApplication.context.getSharedPreferences(name, Context.MODE_PRIVATE);
+		SharedPreferences sharedPreferences = CommonGlobalVar.context.getSharedPreferences(name, Context.MODE_PRIVATE);
 
 		return sharedPreferences;
 	}
@@ -40,5 +42,29 @@ public final class StorageUtil {
 		}
 
 		return result;
+	}
+
+	/**
+	 * 
+	 * @param fileName
+	 * @return
+	 */
+	public static Properties loadAssetsProperties(String fileName) {
+
+		Properties properties = null;
+
+		if (CommonUtil.isNotEmpty(fileName)) {
+			try {
+				InputStream stream = CommonGlobalVar.context.getAssets().open(fileName);
+				if (null != stream && stream.markSupported()) {
+					properties = new Properties();
+					properties.load(stream);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return properties;
 	}
 }
