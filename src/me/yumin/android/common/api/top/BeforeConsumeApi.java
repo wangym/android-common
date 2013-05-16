@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import me.yumin.android.common.domain.api.param.BeforeConsumeApiParam;
 import me.yumin.android.common.domain.api.result.BeforeConsumeApiResult;
-import me.yumin.android.common.domain.enumtype.impl.ApiTopEnum;
+import me.yumin.android.common.domain.enumtype.impl.ApiEnum;
 import me.yumin.android.common.etc.CommonConstant;
 import me.yumin.android.common.etc.CommonUtil;
 import me.yumin.android.common.etc.HttpUtil;
@@ -31,7 +31,7 @@ public class BeforeConsumeApi extends BaseApiTop {
 
 		try {
 			Map<String, Object> paramMap = createParamMap(apiParam);
-			String json = HttpUtil.postParam(getApiUrl(ApiTopEnum.BEFORE_CONSUME), paramMap);
+			String json = HttpUtil.postParam(CommonUtil.getEnvValue(ApiEnum.TOP_BEFORE_CONSUME, null), paramMap);
 			LogUtil.logV("BeforeConsumeApi.request", json);
 			if (CommonUtil.isNotEmpty(json)) {
 				JSONObject rootObject = new JSONObject(json);

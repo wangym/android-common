@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import me.yumin.android.common.domain.enumtype.IEnvEnum;
 import me.yumin.android.common.thirdparty.Base64;
 
 /**
@@ -110,6 +111,33 @@ public final class CommonUtil {
 		}
 
 		return base64Bytes;
+	}
+
+	/**
+	 * 
+	 * @param envEnum
+	 * @param defaultValue
+	 * @return
+	 */
+	public static String getEnvValue(IEnvEnum envEnum, String defaultValue) {
+
+		String envValue = null;
+
+		if (null != envEnum) {
+			if (CommonConstant.V_PROD.equalsIgnoreCase(CommonGlobalVar.mode)) {
+				envValue = envEnum.prodValue();
+			} else if (CommonConstant.V_TEST.equalsIgnoreCase(CommonGlobalVar.mode)) {
+				envValue = envEnum.testValue();
+			}
+		}
+
+		if (!isNotEmpty(envValue)) {
+			envValue = defaultValue;
+		}
+
+		LogUtil.logV("CommonUtil.getEnvValue", envValue);
+
+		return envValue;
 	}
 
 	/**

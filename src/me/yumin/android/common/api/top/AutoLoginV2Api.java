@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import me.yumin.android.common.domain.api.param.AutoLoginV2ApiParam;
 import me.yumin.android.common.domain.api.result.AutoLoginV2ApiResult;
-import me.yumin.android.common.domain.enumtype.impl.ApiTopEnum;
+import me.yumin.android.common.domain.enumtype.impl.ApiEnum;
 import me.yumin.android.common.etc.CommonConstant;
 import me.yumin.android.common.etc.CommonUtil;
 import me.yumin.android.common.etc.HttpUtil;
@@ -31,7 +31,7 @@ public class AutoLoginV2Api extends BaseApiTop {
 
 		try {
 			Map<String, Object> paramMap = createParamMap(apiParam);
-			String json = HttpUtil.postParam(getApiUrl(ApiTopEnum.AUTO_LOGIN_V2), paramMap);
+			String json = HttpUtil.postParam(CommonUtil.getEnvValue(ApiEnum.TOP_AUTO_LOGIN_V2, null), paramMap);
 			LogUtil.logV("AutoLoginV2Api.request", json);
 			if (CommonUtil.isNotEmpty(json)) {
 				JSONObject rootObject = new JSONObject(json);

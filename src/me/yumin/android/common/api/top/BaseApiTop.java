@@ -5,7 +5,6 @@ package me.yumin.android.common.api.top;
 
 import java.util.HashMap;
 import java.util.Map;
-import me.yumin.android.common.api.BaseApi;
 import me.yumin.android.common.etc.CommonConstant;
 import me.yumin.android.common.etc.SystemUtil;
 
@@ -13,7 +12,7 @@ import me.yumin.android.common.etc.SystemUtil;
  * @author yumin
  * 
  */
-public abstract class BaseApiTop extends BaseApi {
+public abstract class BaseApiTop {
 
 	/**
 	 * 
