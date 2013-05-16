@@ -19,10 +19,14 @@ public class CommonApplication extends Application {
 	/**
 	 * 
 	 */
+	public static Application context;
+
+	/**
+	 * 
+	 */
 	@Override
 	public void onCreate() {
 
-		LogUtil.logV(TAG, "onCreate");
 		super.onCreate();
 		init();
 	}
@@ -30,7 +34,6 @@ public class CommonApplication extends Application {
 	@Override
 	public void onLowMemory() {
 
-		LogUtil.logV(TAG, "onLowMemory");
 		super.onLowMemory();
 		destroy();
 	}
@@ -38,7 +41,6 @@ public class CommonApplication extends Application {
 	@Override
 	public void onTerminate() {
 
-		LogUtil.logV(TAG, "onTerminate");
 		super.onTerminate();
 		destroy();
 	}
@@ -53,13 +55,14 @@ public class CommonApplication extends Application {
 	 */
 	private void init() {
 
-		LogUtil.logV(TAG, "init");
-		CommonGlobalVar.context = this;
+		context = this;
+
 		CommonGlobalVar.config = StorageUtil.loadAssetsProperties(CommonConstant.F_CONFIG_PROPERTIES);
 		CommonGlobalVar.log = CommonUtil.getPropertyValue(CommonGlobalVar.config, CommonConstant.K_LOG);
 		CommonGlobalVar.mode = CommonUtil.getPropertyValue(CommonGlobalVar.config, CommonConstant.K_MODE);
 		CommonGlobalVar.imei = SystemUtil.getImei();
 		CommonGlobalVar.imsi = SystemUtil.getImsi();
+
 		CrashHandler.getInstance().init();
 	}
 

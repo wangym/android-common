@@ -18,8 +18,8 @@ public final class ViewUtil {
 	 */
 	public static void showToast(String text) {
 
-		if (null != CommonGlobalVar.context && CommonUtil.isNotEmpty(text)) {
-			Toast.makeText(CommonGlobalVar.context, text, Toast.LENGTH_SHORT).show();
+		if (null != CommonApplication.context && CommonUtil.isNotEmpty(text)) {
+			Toast.makeText(CommonApplication.context, text, Toast.LENGTH_SHORT).show();
 		}
 	}
 }

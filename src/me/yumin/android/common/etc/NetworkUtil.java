@@ -22,8 +22,8 @@ public final class NetworkUtil {
 
 		boolean result = false;
 
-		if (null != CommonGlobalVar.context) {
-			ConnectivityManager connMgr = (ConnectivityManager) CommonGlobalVar.context.getSystemService(Context.CONNECTIVITY_SERVICE);
+		if (null != CommonApplication.context) {
+			ConnectivityManager connMgr = (ConnectivityManager) CommonApplication.context.getSystemService(Context.CONNECTIVITY_SERVICE);
 			if (null != connMgr) {
 				NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 				if (null != networkInfo && networkInfo.isConnected()) {

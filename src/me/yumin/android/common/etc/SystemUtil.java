@@ -26,8 +26,8 @@ public final class SystemUtil {
 	 */
 	public static String getImsi() {
 
-		if (!CommonUtil.isNotEmpty(CommonGlobalVar.imsi) && null != CommonGlobalVar.context) {
-			CommonGlobalVar.imsi = PhoneInfo.getImsi(CommonGlobalVar.context);
+		if (!CommonUtil.isNotEmpty(CommonGlobalVar.imsi) && null != CommonApplication.context) {
+			CommonGlobalVar.imsi = PhoneInfo.getImsi(CommonApplication.context);
 		}
 
 		return CommonGlobalVar.imsi;
@@ -39,8 +39,8 @@ public final class SystemUtil {
 	 */
 	public static String getImei() {
 
-		if (!CommonUtil.isNotEmpty(CommonGlobalVar.imei) && null != CommonGlobalVar.context) {
-			CommonGlobalVar.imei = PhoneInfo.getImei(CommonGlobalVar.context);
+		if (!CommonUtil.isNotEmpty(CommonGlobalVar.imei) && null != CommonApplication.context) {
+			CommonGlobalVar.imei = PhoneInfo.getImei(CommonApplication.context);
 		}
 
 		return CommonGlobalVar.imei;
