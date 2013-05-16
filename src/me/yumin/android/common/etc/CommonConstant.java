@@ -26,6 +26,7 @@ public final class CommonConstant {
 	public static final String K_ITEM_PIC_URL = "itemPicUrl";
 	public static final String K_ITEM_TITLE = "itemTitle";
 	public static final String K_KEY = "key";
+	public static final String K_LOG = "log";
 	public static final String K_LOGIN_TIME = "logintime";
 	public static final String K_MODE = "mode";
 	public static final String K_NICK = "nick";
@@ -46,5 +47,6 @@ public final class CommonConstant {
 	public static final String CHARSET_NAME = "UTF-8";
 	public static final String SEPARATE_DOUBLE_COLON = "::";
 	// value
-	public static final String V_SUCCESS = "SUCCESS";
+	public static final String V_ENABLE = "enable";
+	public static final String V_SUCCESS = "success";
 }

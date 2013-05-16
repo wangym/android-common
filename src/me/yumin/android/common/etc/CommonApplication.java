@@ -4,7 +4,6 @@
 package me.yumin.android.common.etc;
 
 import android.app.Application;
-import android.util.Log;
 
 /**
  * @author yumin
@@ -23,7 +22,7 @@ public class CommonApplication extends Application {
 	@Override
 	public void onCreate() {
 
-		Log.v(TAG, "onCreate");
+		LogUtil.logV(TAG, "onCreate");
 		super.onCreate();
 		init();
 	}
@@ -31,7 +30,7 @@ public class CommonApplication extends Application {
 	@Override
 	public void onLowMemory() {
 
-		Log.v(TAG, "onLowMemory");
+		LogUtil.logV(TAG, "onLowMemory");
 		super.onLowMemory();
 		destroy();
 	}
@@ -39,7 +38,7 @@ public class CommonApplication extends Application {
 	@Override
 	public void onTerminate() {
 
-		Log.v(TAG, "onTerminate");
+		LogUtil.logV(TAG, "onTerminate");
 		super.onTerminate();
 		destroy();
 	}
@@ -54,9 +53,10 @@ public class CommonApplication extends Application {
 	 */
 	private void init() {
 
-		Log.v(TAG, "init");
+		LogUtil.logV(TAG, "init");
 		CommonGlobalVar.context = this;
 		CommonGlobalVar.config = StorageUtil.loadAssetsProperties(CommonConstant.F_CONFIG_PROPERTIES);
+		CommonGlobalVar.log = CommonUtil.getPropertyValue(CommonGlobalVar.config, CommonConstant.K_LOG);
 		CommonGlobalVar.mode = CommonUtil.getPropertyValue(CommonGlobalVar.config, CommonConstant.K_MODE);
 		CommonGlobalVar.imei = SystemUtil.getImei();
 		CommonGlobalVar.imsi = SystemUtil.getImsi();
@@ -69,6 +69,6 @@ public class CommonApplication extends Application {
 	 */
 	private void destroy() {
 
-		Log.v(TAG, "destroy");
+		LogUtil.logV(TAG, "destroy");
 	}
 }

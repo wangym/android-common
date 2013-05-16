@@ -13,13 +13,12 @@ public class LogUtil {
 
 	/**
 	 * 
-	 * @param mode
 	 * @param tag
 	 * @param msg
 	 */
 	public static void logV(String tag, String msg) {
 
-		if ("debug".equalsIgnoreCase(CommonGlobalVar.mode)) {
+		if (CommonConstant.V_ENABLE.equalsIgnoreCase(CommonGlobalVar.log)) {
 			Log.v(tag, CommonUtil.isNotEmpty(msg) ? msg : "");
 		}
 	}
