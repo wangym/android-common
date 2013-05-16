@@ -47,6 +47,8 @@ public final class CommonConstant {
 	public static final String CHARSET_NAME = "UTF-8";
 	public static final String SEPARATE_DOUBLE_COLON = "::";
 	// value
+	public static final String V_DISABLE = "disable";
 	public static final String V_ENABLE = "enable";
+	public static final String V_PROD = "prod";
 	public static final String V_SUCCESS = "success";
 }

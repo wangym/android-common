@@ -116,15 +116,16 @@ public final class CommonUtil {
 	 * 
 	 * @param properties
 	 * @param key
+	 * @param defaultValue
 	 * @return
 	 */
-	public static String getPropertyValue(Properties properties, String key) {
+	public static String getPropertyValue(Properties properties, String key, String defaultValue) {
 
 		String value = null;
 
 		if (null != properties && isNotEmpty(key)) {
 			if (properties.containsKey(key)) {
-				value = properties.getProperty(key);
+				value = properties.getProperty(key, defaultValue);
 			}
 		}
 

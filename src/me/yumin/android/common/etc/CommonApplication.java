@@ -58,8 +58,8 @@ public class CommonApplication extends Application {
 		context = this;
 
 		CommonGlobalVar.config = StorageUtil.loadAssetsProperties(CommonConstant.F_CONFIG_PROPERTIES);
-		CommonGlobalVar.log = CommonUtil.getPropertyValue(CommonGlobalVar.config, CommonConstant.K_LOG);
-		CommonGlobalVar.mode = CommonUtil.getPropertyValue(CommonGlobalVar.config, CommonConstant.K_MODE);
+		CommonGlobalVar.log = CommonUtil.getPropertyValue(CommonGlobalVar.config, CommonConstant.K_LOG, CommonConstant.V_DISABLE);
+		CommonGlobalVar.mode = CommonUtil.getPropertyValue(CommonGlobalVar.config, CommonConstant.K_MODE, CommonConstant.V_PROD);
 		CommonGlobalVar.imei = SystemUtil.getImei();
 		CommonGlobalVar.imsi = SystemUtil.getImsi();
 
