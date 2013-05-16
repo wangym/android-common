@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import me.yumin.android.common.domain.api.param.LoginV2ApiParam;
 import me.yumin.android.common.domain.api.result.LoginV2ApiResult;
+import me.yumin.android.common.domain.enumtype.impl.ApiTopEnum;
 import me.yumin.android.common.etc.CommonConstant;
 import me.yumin.android.common.etc.CommonUtil;
 import me.yumin.android.common.etc.HttpUtil;
@@ -17,12 +18,7 @@ import org.json.JSONObject;
  * @author yumin
  * 
  */
-public class LoginV2Api extends BaseTopApi {
-
-	/**
-	 * 
-	 */
-	private static final String TAG = LoginV2Api.class.getSimpleName();
+public class LoginV2Api extends BaseApiTop {
 
 	/**
 	 * 
@@ -35,8 +31,8 @@ public class LoginV2Api extends BaseTopApi {
 
 		try {
 			Map<String, Object> paramMap = createParamMap(apiParam);
-			String json = HttpUtil.postParam(API_LOGIN_V2, paramMap);
-			LogUtil.logV(TAG, json);
+			String json = HttpUtil.postParam(getApiUrl(ApiTopEnum.LOGIN_V2), paramMap);
+			LogUtil.logV("LoginV2Api.request", json);
 			if (CommonUtil.isNotEmpty(json)) {
 				JSONObject rootObject = new JSONObject(json);
 				if (null != rootObject) {

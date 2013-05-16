@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import me.yumin.android.common.domain.api.param.GetAppTokenApiParam;
 import me.yumin.android.common.domain.api.result.GetAppTokenApiResult;
+import me.yumin.android.common.domain.enumtype.impl.ApiTopEnum;
 import me.yumin.android.common.etc.CommonConstant;
 import me.yumin.android.common.etc.CommonUtil;
 import me.yumin.android.common.etc.HttpUtil;
@@ -17,12 +18,7 @@ import org.json.JSONObject;
  * @author yumin
  * 
  */
-public class GetAppTokenApi extends BaseTopApi {
-
-	/**
-	 * 
-	 */
-	private static final String TAG = GetAppTokenApi.class.getSimpleName();
+public class GetAppTokenApi extends BaseApiTop {
 
 	/**
 	 * 
@@ -35,8 +31,8 @@ public class GetAppTokenApi extends BaseTopApi {
 
 		try {
 			Map<String, Object> paramMap = createParamMap(apiParam);
-			String json = HttpUtil.postParam(API_GET_APP_TOKEN, paramMap);
-			LogUtil.logV(TAG, json);
+			String json = HttpUtil.postParam(getApiUrl(ApiTopEnum.GET_APP_TOKEN), paramMap);
+			LogUtil.logV("GetAppTokenApi.request", json);
 			if (CommonUtil.isNotEmpty(json)) {
 				JSONObject rootObject = new JSONObject(json);
 				if (null != rootObject) {

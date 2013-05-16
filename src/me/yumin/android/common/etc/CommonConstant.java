@@ -51,4 +51,5 @@ public final class CommonConstant {
 	public static final String V_ENABLE = "enable";
 	public static final String V_PROD = "prod";
 	public static final String V_SUCCESS = "success";
+	public static final String V_TEST = "test";
 }
