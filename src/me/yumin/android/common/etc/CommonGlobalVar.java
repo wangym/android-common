@@ -22,10 +22,10 @@ public abstract class CommonGlobalVar {
 	public static String log = "";
 	// 运行的环境
 	public static String mode = "";
-	// SIM序列号
-	public static String imsi = "";
 	// 手机序列号
 	public static String imei = "";
+	// SIM序列号
+	public static String imsi = "";
 
 	/**
 	 * 
@@ -35,7 +35,7 @@ public abstract class CommonGlobalVar {
 		Log.v(TAG, String.format("config=%s", config));
 		Log.v(TAG, String.format("log=%s", log));
 		Log.v(TAG, String.format("mode=%s", mode));
-		Log.v(TAG, String.format("imsi=%s", imsi));
 		Log.v(TAG, String.format("imei=%s", imei));
+		Log.v(TAG, String.format("imsi=%s", imsi));
 	}
 }
